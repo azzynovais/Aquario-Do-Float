@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades Marítimas: Peixe-Lanterna - O Aquário de Azzy</title>
+    <link rel="stylesheet" href="../styles.css"> <link rel="stylesheet" href="../blog.css"> <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos específicos para páginas de post individuais */
+        .post-full-content {
+            max-width: 800px;
+            margin: 4rem auto 2rem auto; /* Ajusta margem superior por causa da navbar fixa */
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            text-align: left;
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            box-sizing: border-box;
+        }
+
+        .post-full-content h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            background-color: transparent;
+            opacity: 1;
+            text-align: center;
+        }
+
+        .post-full-content .post-meta {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .post-full-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-full-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-full-content strong {
+            color: var(--secondary-accent);
+        }
+
+        /* Botão Voltar */
+        .back-to-blog {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #f06, #a03); /* Cor diferente para destaque */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .back-to-blog:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.4);
+        }
+
+        /* Ajustes para a navbar em páginas de post */
+        body.post-page {
+            padding-left: 0; /* Remove padding do body, pois a sidebar não estará ativa */
+            display: block; /* Remove flex do body para páginas de post */
+            text-align: left; /* Alinha o texto à esquerda por padrão */
+        }
+
+        .post-page .sidebar-navbar {
+            display: none; /* Esconde a sidebar em páginas de post */
+        }
+
+        @media (max-width: 992px) {
+            .post-full-content {
+                margin-top: 2rem; /* Menos margem no mobile */
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="post-page theme-dark"> <main>
+        <div class="post-full-content">
+            <img src="../img/photogimp.png" alt="PhotoGIMP Interface">
+            <h1>PhotoGIMP, O Photoshop open-source de base GIMP e feito pelo Diolinux</h1>
+            <p class="post-meta">Por Azzy Novais em 08 de Julho de 2025</p>
+
+            <p>
+                O PhotoGIMP é uma versão modificada do GIMP, um software de edição de imagens open-source, que foi aprimorada para se assemelhar ao Adobe Photoshop. Desenvolvido pela equipe do Diolinux, o PhotoGIMP oferece uma interface mais amigável e recursos adicionais que facilitam a transição para usuários acostumados com o Photoshop. Ele inclui plugins, temas e configurações pré-definidas que tornam o GIMP mais acessível e funcional para tarefas de edição de imagens avançadas.
+            </p>
+            <a href="../index.html" class="back-to-blog">Voltar para o Blog</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+            } else {
+                body.classList.add('theme-dark');
+            }
+        });
+    </script>
+</body>
+</html>

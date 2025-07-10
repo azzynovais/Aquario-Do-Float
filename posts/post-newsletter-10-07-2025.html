@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades Marítimas: Peixe-Lanterna - O Aquário de Azzy</title>
+    <link rel="stylesheet" href="../styles.css"> <link rel="stylesheet" href="../blog.css"> <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .post-full-content {
+            max-width: 800px;
+            margin: 4rem auto 2rem auto;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            text-align: left;
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            box-sizing: border-box;
+        }
+
+        .post-full-content h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            background-color: transparent;
+            opacity: 1;
+            text-align: center;
+        }
+
+        .post-full-content .post-meta {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .post-full-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-full-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-full-content strong {
+            color: var(--secondary-accent);
+        }
+
+        .back-to-blog {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #f06, #a03);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .back-to-blog:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.4);
+        }
+
+        body.post-page {
+            padding-left: 0;
+            display: block;
+            text-align: left; 
+        }
+
+        .post-page .sidebar-navbar {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            .post-full-content {
+                margin-top: 2rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="post-page theme-dark"> <main>
+         <img src="../img/newsletter10072025.jpg" alt="Newsletter">
+        <div class="post-full-content">
+            <h1>Newsletter de hoje</h1>
+            <p class="post-meta">Por Azzy Novais em 1 de Julho de 2025</p>
+
+            <p>
+            Deepin 25 foi lançado, e justamente no dia do meu aniversário, 26 de junho! A nova versão recebeu atualizações para melhorar a performance e está muito polida. A distro, baseada no Debian Stable, agora permite usar os repositórios "beige", que são um fork do repositório do Debian Testing. Entre as novidades estão o DDE 7.0, totalmente reformulado e refinado, além de mais de <strong>1000 patches</strong> para tornar a distribuição uma excelente escolha. A equipe do Deepin também está fazendo um apelo para tradutores ajudarem a traduzir o sistema, contribuindo para a popularização da distro.
+            </p>
+
+            <h3>KDE 6.4</h3>
+            <p>
+              KDE 6.4 foi lançado oficialmente, o Big Linux, corrigindo um erro meu, recebeu atualização de frameworks e o KDE 6.3.5, então é essa versão que está agora, mas o KDE 6.4 é a versão que será lançada no Ubuntu 25.10, que será lançado em Outubro de 2025, e o KDE 6.4 traz várias melhorias e correções de bugs, além de novos recursos que aprimoram a experiência do usuário.
+            </p>
+            <ul>
+                <li>Atualização do KDE Frameworks 6.4</li>
+                <li>Atualização do Plasma 6.3.5</li>
+                <li>Correção de bugs e melhorias de desempenho</li>
+                <li>Novos recursos e aprimoramentos na interface do usuário</li>
+            </ul>
+
+            <h3>Ubuntu 25.10 e as frramentas em Rust?</h3>
+            <p>
+                Ubuntu 25.10 irá trazer as ferramentas em Rust que irá substuir as utilidades feita do GNU, se tudo ocorrer bem, a proxima LTS, 26.04 terá as ferramentas em Rust invez do padrão que é em C e outras linguagens, e o Ubuntu 25.10 será lançado em Outubro de 2025, e terá o GNOME 49, que é a versão que será lançada no Ubuntu 25.10.
+            </p>
+
+            <h3>Linux Mint 22.2</h3>
+            <p>
+                Mint 22.2 está bem proximo, terá uma BETA em Julho perto, e poderá sair em agosto, a versão final, e terá o Cinnamon 6.0, que é a versão que será lançada no Ubuntu 25.10, e o Mint 22.2 será baseado no Ubuntu 24.04 em sua point release, que é a versão LTS do Ubuntu.
+            </p>
+
+            <a href="../index.html" class="back-to-blog">Voltar para o Blog</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+            } else {
+                body.classList.add('theme-dark');
+            }
+        });
+    </script>
+</body>
+</html>

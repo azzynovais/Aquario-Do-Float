@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquario do Float</title>
+    <link rel="stylesheet" href="styles.css"> <link rel="stylesheet" href="blog.css"> <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="blog-container">
+        <nav class="sidebar-navbar">
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="sidebar-content" id="sidebar-content">
+                <h2 class="sidebar-title">Navegue pelo Aquário</h2>
+                <ul id="post-nav-list" class="sidebar-menu">
+                    </ul>
+                <div class="theme-switcher">
+                    <button id="theme-toggle" class="btn theme-btn">
+                        <i class="fas fa-sun"></i> Mudar Tema
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <header class="blog-header">
+            <h1>O Aquário do Float</h1>
+            <p class="blog-tagline">Um blog que mostra noticias e opinião do mundo open source, divirta-se!</p>
+        </header>
+
+        <main class="blog-main">
+            <section class="posts-section">
+                <h2>Últimas Descobertas</h2>
+                <div id="posts-list" class="posts-grid">
+                    </div>
+            </section>
+        </main>
+
+        <footer class="blog-footer">
+            <p>&copy; 2025 Floating-Skies, todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <script src="blog-posts.js"></script> <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postsListContainer = document.getElementById('posts-list');
+            const postNavListContainer = document.getElementById('post-nav-list');
+
+            blogPosts.forEach(post => {
+                const postCard = document.createElement('div');
+                postCard.classList.add('post-card');
+                postCard.innerHTML = `
+                    <div class="post-image" style="background-image: url('${post.image}');"></div>
+                    <div class="post-info">
+                        <h3>${post.title}</h3>
+                        <p class="post-meta">Por ${post.author} em ${post.date}</p>
+                        <p>${post.summary}</p>
+                        <a href="${post.file}" class="btn" target="_blank" rel="noopener">Ver Mais</a>
+                    </div>
+                `;
+                postsListContainer.appendChild(postCard);
+
+                const navItem = document.createElement('li');
+                navItem.classList.add('sidebar-item');
+                navItem.innerHTML = `<a href="${post.file}" target="_blank" rel="noopener">${post.title}</a>`;
+                postNavListContainer.appendChild(navItem);
+            });
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebarContent = document.getElementById('sidebar-content');
+
+            sidebarToggle.addEventListener('click', () => {
+                sidebarContent.classList.toggle('active');
+                sidebarToggle.querySelector('i').classList.toggle('fa-bars');
+                sidebarToggle.querySelector('i').classList.toggle('fa-times');
+            });
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+            } else {
+                body.classList.add('theme-dark'); 
+            }
+            updateThemeButtonIcon();
+
+            themeToggle.addEventListener('click', () => {
+                if (body.classList.contains('theme-dark')) {
+                    body.classList.remove('theme-dark');
+                    body.classList.add('theme-light');
+                    localStorage.setItem('theme', 'theme-light');
+                } else {
+                    body.classList.remove('theme-light');
+                    body.classList.add('theme-dark');
+                    localStorage.setItem('theme', 'theme-dark');
+                }
+                updateThemeButtonIcon();
+            });
+
+            function updateThemeButtonIcon() {
+                const icon = themeToggle.querySelector('i');
+                if (body.classList.contains('theme-dark')) {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                } else {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
